@@ -6,6 +6,10 @@ myShoppingApp.config(['$routeProvider', function($routeProvider){
       templateUrl: 'views/home.html',
       controller:'ShoppingController'
     })
+    .when('/login', {
+      templateUrl: 'views/login.html'
+
+      })
     .when('/directory', {
       templateUrl: 'views/directory.html',
       controller: 'ShoppingController'
@@ -52,6 +56,10 @@ myShoppingApp.controller('ShoppingController', ['$scope', '$http', function($sco
     $scope.newitem.colour="";
     $scope.newitem.price="";
 
+  };
+
+  $scope.removeAll = function(){
+      $scope.items = [];
   };
 
   $http.get('data/items.json').then(function(response){

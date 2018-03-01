@@ -101,6 +101,14 @@ main{
   margin: 10px 0;
 }
 
+.content textarea{
+  width: 90%;
+  padding: 10px 5%;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  margin: 10px 0;
+}
+
 .content input[type="submit"]:last-child{
   width: 150px;
   display: block;
@@ -140,5 +148,25 @@ main.ng-enter.ng-enter-active {
 
 #item-list li.ng-enter.ng-enter-active {
   opacity:1;
-  transform: translateY(0px);
+  transform: translateY(0);
+}
+
+#item-list li.ng-leave {
+  transition:0.2s linear all;
+  opacity:1;
+  transform: translatex(0);
+}
+
+#item-list li.ng-leave.ng-leave-active {
+  opacity:0;
+  transform: translateX(-100%);
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+  border: 2px solid red;
+}
+
+input[disabled="disabled"]{
+  opacity: 0.4;
+  cursor: not-allowed |important;
 }
